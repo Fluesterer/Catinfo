@@ -116,10 +116,8 @@ button:focus {
 
 .video-container {
   position: relative;
-  /* Das Video ist jetzt wirklich klein und im richtigen Shorts Format */
-  width: 25%;  /* Kleinere Breite */
-  padding-bottom: 32.50%; /* 9:16 Seitenverhältnis bleibt erhalten */
-  height: 0;
+  width: 398px;  /* Feste Breite auf 398px gesetzt */
+  height: 707px; /* Feste Höhe auf 707px gesetzt */
   overflow: hidden;
   background: #000;
   border-radius: 10px;
@@ -133,6 +131,7 @@ button:focus {
   width: 100%;
   height: 100%;
 }
+
 
 .video p {
   padding: 15px;
