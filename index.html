@@ -3,53 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mein Katzen Vlog</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Vlog Galerie</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
-        <div class="container">
-            <h1>Willkommen zu meinem Katzen Vlog!</h1>
-            <p>Hier teile ich die lustigsten und süßesten Momente mit meinen Katzen.</p>
-        </div>
+        <h1>Meine Vlog Galerie</h1>
+        <button id="toggleDarkMode">Dunkelmodus</button>
     </header>
 
-    <main>
-        <div class="container">
-            <section class="vlog-entry">
-                <h2>Katzen Vlog luna & Cleo</h2>
-                <p>Ich habe jetzt endlich ein Video von Cleo und Luna, wie sie sich putzen.</p>
-                <a href="katzenvideo1.mp4" target="_blank">
-                    <button class="info-button">Zum Video</button>
+    <section class="gallery">
+        <div class="photo-row">
+            <div class="photo-item">
+                <a href="https://example.com" target="_blank">
+                    <img src="https://via.placeholder.com/300" alt="Foto 1">
                 </a>
-                <div class="info">
-                    <h3>Mehr über dieses Video</h3>
-                    <p>In diesem Video siehst du, wie meine Katzen sich putzen!</p>
-                </div>
-            </section>
-
-            <section class="vlog-entry">
-                <h2>Katze in der Sonne</h2>
-                <p>Ich habe ein schönes Bild meiner Katze im Garten gemacht, wie sie in der Sonne schläft.</p>
-                <a href="katze1.jpg" target="_blank">
-                    <img src="katze1.jpg" alt="Katze in der Sonne">
+                <p>Foto 1 Beschreibung</p>
+            </div>
+            <div class="photo-item">
+                <a href="https://example.com" target="_blank">
+                    <img src="https://via.placeholder.com/300" alt="Foto 2">
                 </a>
-                <button class="info-button">Mehr Infos</button>
-                <div class="info">
-                    <h3>Mehr über dieses Bild</h3>
-                    <p>Meine Katze liebt es, sich in der Sonne zu entspannen. Dieses Bild ist einer meiner Favoriten!</p>
-                </div>
-            </section>
-
-            <!-- Weitere Vlog-Einträge hier hinzufügen -->
+                <p>Foto 2 Beschreibung</p>
+            </div>
         </div>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Mein Katzen Vlog. Alle Rechte vorbehalten.</p>
+        <div class="photo-row">
+            <div class="photo-item">
+                <a href="https://example.com" target="_blank">
+                    <img src="https://via.placeholder.com/300" alt="Foto 3">
+                </a>
+                <p>Foto 3 Beschreibung</p>
+            </div>
+            <div class="photo-item">
+                <a href="https://example.com" target="_blank">
+                    <img src="https://via.placeholder.com/300" alt="Foto 4">
+                </a>
+                <p>Foto 4 Beschreibung</p>
+            </div>
         </div>
-    </footer>
+
+        <div class="video-section">
+            <h2>Videos</h2>
+            <div class="video-item">
+                <iframe src="https://youtube.com/shorts/dAhh7QXnXHc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>Video 1 Beschreibung</p>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>Video 2 Beschreibung</p>
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
