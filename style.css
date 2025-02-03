@@ -107,14 +107,6 @@ button:focus {
   margin: 0;
 }
 
-/* Stil für das Datum */
-.date {
-  font-size: 1.1rem;
-  color: #333;
-  text-align: center;
-  margin-top: 20px;
-}
-
 .videos {
   margin-top: 40px;
 }
