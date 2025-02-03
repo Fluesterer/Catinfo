@@ -1,62 +1,53 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vlog Galerie</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meine Vlog Foto-Ausstellung</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <div class="container">
     <header>
-        <h1>Meine Vlog Galerie</h1>
-        <button id="toggleDarkMode">Dunkelmodus</button>
+      <h1>Willkommen zu meiner Vlog-Foto-Ausstellung</h1>
+      <button id="theme-toggle">🌙 Dunkelmodus</button>
     </header>
 
     <section class="gallery">
-        <div class="photo-row">
-            <div class="photo-item">
-                <a href="https://example.com" target="_blank">
-                    <img src="https://via.placeholder.com/300" alt="Foto 1">
-                </a>
-                <p>Foto 1 Beschreibung</p>
-            </div>
-            <div class="photo-item">
-                <a href="https://example.com" target="_blank">
-                    <img src="https://via.placeholder.com/300" alt="Foto 2">
-                </a>
-                <p>Foto 2 Beschreibung</p>
-            </div>
+      <div class="photo-row">
+        <div class="photo">
+          <img src="https://via.placeholder.com/600x400" alt="Foto 1">
+          <p>Foto 1: Sonnenuntergang in den Bergen</p>
         </div>
+        <div class="photo">
+          <img src="https://via.placeholder.com/600x400" alt="Foto 2">
+          <p>Foto 2: Stadtlichter bei Nacht</p>
+        </div>
+      </div>
 
-        <div class="photo-row">
-            <div class="photo-item">
-                <a href="https://example.com" target="_blank">
-                    <img src="https://via.placeholder.com/300" alt="Foto 3">
-                </a>
-                <p>Foto 3 Beschreibung</p>
-            </div>
-            <div class="photo-item">
-                <a href="https://example.com" target="_blank">
-                    <img src="https://via.placeholder.com/300" alt="Foto 4">
-                </a>
-                <p>Foto 4 Beschreibung</p>
-            </div>
+      <div class="photo-row">
+        <div class="photo">
+          <img src="https://via.placeholder.com/600x400" alt="Foto 3">
+          <p>Foto 3: Strandspaziergang im Winter</p>
         </div>
-
-        <div class="video-section">
-            <h2>Videos</h2>
-            <div class="video-item">
-                <iframe src="https://youtube.com/shorts/dAhh7QXnXHc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>Video 1 Beschreibung</p>
-            </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>Video 2 Beschreibung</p>
-            </div>
+        <div class="photo">
+          <img src="https://via.placeholder.com/600x400" alt="Foto 4">
+          <p>Foto 4: Abstrakte Kunst</p>
         </div>
+      </div>
     </section>
 
-    <script src="script.js"></script>
+    <section class="videos">
+      <h2>Meine Vlogs</h2>
+      <div class="video">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/dAhh7QXnXHc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>Vlog 1: Reise nach Bali</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
