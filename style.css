@@ -174,5 +174,16 @@ button:focus {
 }
 
 .dark-theme .photo p {
-  
+  background-color: #555;
+  color: #fff;
+}
 
+.dark-theme .video {
+  background-color: #444;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .video p {
+  background-color: #555;
+  color: #fff;
+}
