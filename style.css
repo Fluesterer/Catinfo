@@ -116,9 +116,9 @@ button:focus {
 
 .video-container {
   position: relative;
-  /* Das Video ist kleiner, aber bleibt im vertikalen Format (9:16) */
-  width: 60%; /* Neue Breite für kleinere Darstellung */
-  padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
+  /* Video Größe auf 35% gesetzt, sehr viel kleiner */
+  width: 35%; /* Jetzt wirklich kleiner */
+  padding-bottom: 177.78%; /* 9:16 Aspect Ratio bleibt erhalten */
   height: 0;
   overflow: hidden;
   background: #000;
