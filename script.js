@@ -1,3 +1,4 @@
+// Alle Info-Buttons in der Galerie hinzufügen
 document.querySelectorAll('.info-button').forEach(button => {
     button.addEventListener('click', () => {
         const info = button.nextElementSibling;
