@@ -1,13 +1,13 @@
 // 4gewinntscript.js
 
-// Initialisiere das Spielfeld
 const cols = 7;
 const rows = 6;
 let board = [];
 let currentPlayer = 'red';
 let gameOver = false;
+const playerColor = 'red';
+const aiColor = 'yellow';
 
-// Elemente aus dem DOM holen
 const boardElement = document.querySelector('.board');
 const messageElement = document.querySelector('.message');
 const restartButton = document.getElementById('restartButton');
@@ -53,7 +53,7 @@ function checkWinner() {
       }
     }
   }
-  
+
   // Überprüfe jede Spalte
   for (let col = 0; col < cols; col++) {
     for (let row = 0; row < rows - 3; row++) {
@@ -97,6 +97,7 @@ function checkWinner() {
 function dropDisc(col) {
   if (gameOver) return;
 
+  // Spieler macht seinen Zug
   for (let row = rows - 1; row >= 0; row--) {
     if (!board[row][col]) {
       board[row][col] = currentPlayer;
@@ -107,10 +108,38 @@ function dropDisc(col) {
         messageElement.textContent = `${winner} hat gewonnen!`;
         restartButton.classList.remove('hidden');
       } else {
-        currentPlayer = currentPlayer === 'red' ? 'yellow' : 'red';
-        messageElement.textContent = `${currentPlayer === 'red' ? 'Rot' : 'Gelb'} ist dran!`;
+        currentPlayer = currentPlayer === playerColor ? aiColor : playerColor;
+        messageElement.textContent = `${currentPlayer === playerColor ? 'Rot' : 'Gelb'} ist dran!`;
+        if (currentPlayer === aiColor) {
+          aiTurn();
+        }
       }
       return;
+    }
+  }
+}
+
+// AI-Logik: Ein sehr einfacher Zug
+function aiTurn() {
+  if (gameOver) return;
+
+  // Die KI prüft die Spalten von links nach rechts, um einen gültigen Zug zu machen
+  for (let col = 0; col < cols; col++) {
+    for (let row = rows - 1; row >= 0; row--) {
+      if (!board[row][col]) {
+        board[row][col] = aiColor;
+        renderBoard();
+        const winner = checkWinner();
+        if (winner) {
+          gameOver = true;
+          messageElement.textContent = `${winner} hat gewonnen!`;
+          restartButton.classList.remove('hidden');
+        } else {
+          currentPlayer = playerColor;
+          messageElement.textContent = 'Rot ist dran!';
+        }
+        return;
+      }
     }
   }
 }
@@ -119,7 +148,7 @@ function dropDisc(col) {
 restartButton.addEventListener('click', () => {
   setupBoard();
   renderBoard();
-  currentPlayer = 'red';
+  currentPlayer = playerColor;
   messageElement.textContent = 'Rot ist dran!';
   restartButton.classList.add('hidden');
   gameOver = false;
