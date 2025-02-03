@@ -4,160 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>4-Gewinnt gegen KI</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f5f5f5;
-    }
-    .game-container {
-      display: grid;
-      grid-template-columns: repeat(7, 50px);
-      grid-gap: 5px;
-      background-color: #333;
-      padding: 10px;
-      border-radius: 10px;
-    }
-    .cell {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #fff;
-      cursor: pointer;
-    }
-    .cell.red {
-      background-color: red;
-    }
-    .cell.yellow {
-      background-color: yellow;
-    }
-    .message {
-      margin-top: 20px;
-      font-size: 18px;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"> <!-- Verknüpfung zur CSS-Datei -->
 </head>
 <body>
+  <h1>4-Gewinnt gegen KI</h1>
+  
+  <div class="message">Dein Zug!</div>
+  <div class="board"></div>
+  <button class="button hidden" id="restartButton">Nochmal spielen</button>
+  <button class="button hidden" id="playAgainButton">Verloren! Nochmal spielen</button>
 
-  <div class="game-container" id="game-container"></div>
-  <div class="message" id="message"></div>
-
-  <script>
-    const COLS = 7;
-    const ROWS = 6;
-    const EMPTY = 0;
-    const RED = 1;
-    const YELLOW = 2;
-
-    let board = Array.from({ length: ROWS }, () => Array(COLS).fill(EMPTY));
-    let currentPlayer = RED; // Red starts the game
-    let gameOver = false;
-
-    const gameContainer = document.getElementById('game-container');
-    const messageElement = document.getElementById('message');
-
-    function createBoard() {
-      gameContainer.innerHTML = '';
-      for (let r = 0; r < ROWS; r++) {
-        for (let c = 0; c < COLS; c++) {
-          const cell = document.createElement('div');
-          cell.classList.add('cell');
-          cell.dataset.row = r;
-          cell.dataset.col = c;
-          cell.addEventListener('click', handleClick);
-          gameContainer.appendChild(cell);
-        }
-      }
-    }
-
-    function handleClick(e) {
-      if (gameOver) return;
-      const col = e.target.dataset.col;
-      const row = getAvailableRow(col);
-      if (row !== -1) {
-        placeDisc(row, col, currentPlayer);
-        if (checkWin(row, col, currentPlayer)) {
-          messageElement.textContent = `Player ${currentPlayer === RED ? 'Red' : 'Yellow'} wins!`;
-          gameOver = true;
-        } else {
-          currentPlayer = currentPlayer === RED ? YELLOW : RED;
-          if (currentPlayer === YELLOW) {
-            setTimeout(() => aiMove(), 500); // AI plays after a short delay
-          }
-        }
-      }
-    }
-
-    function getAvailableRow(col) {
-      for (let row = ROWS - 1; row >= 0; row--) {
-        if (board[row][col] === EMPTY) {
-          return row;
-        }
-      }
-      return -1;
-    }
-
-    function placeDisc(row, col, player) {
-      board[row][col] = player;
-      const cell = gameContainer.querySelector(`[data-row="${row}"][data-col="${col}"]`);
-      cell.classList.add(player === RED ? 'red' : 'yellow');
-    }
-
-    function checkWin(row, col, player) {
-      // Check all directions (vertical, horizontal, diagonal)
-      return (
-        checkDirection(row, col, player, 1, 0) || // Vertical
-        checkDirection(row, col, player, 0, 1) || // Horizontal
-        checkDirection(row, col, player, 1, 1) || // Diagonal \
-        checkDirection(row, col, player, 1, -1)   // Diagonal /
-      );
-    }
-
-    function checkDirection(row, col, player, dRow, dCol) {
-      let count = 1;
-      for (let i = 1; i < 4; i++) {
-        const r = row + i * dRow;
-        const c = col + i * dCol;
-        if (r >= 0 && r < ROWS && c >= 0 && c < COLS && board[r][c] === player) {
-          count++;
-        } else {
-          break;
-        }
-      }
-      for (let i = 1; i < 4; i++) {
-        const r = row - i * dRow;
-        const c = col - i * dCol;
-        if (r >= 0 && r < ROWS && c >= 0 && c < COLS && board[r][c] === player) {
-          count++;
-        } else {
-          break;
-        }
-      }
-      return count >= 4;
-    }
-
-    function aiMove() {
-      let col = Math.floor(Math.random() * COLS); // Simple AI that picks a random column
-      while (getAvailableRow(col) === -1) {
-        col = Math.floor(Math.random() * COLS);
-      }
-      const row = getAvailableRow(col);
-      placeDisc(row, col, YELLOW);
-      if (checkWin(row, col, YELLOW)) {
-        messageElement.textContent = `Player Yellow wins!`;
-        gameOver = true;
-      } else {
-        currentPlayer = RED;
-      }
-    }
-
-    createBoard();
-  </script>
-
+  <script src="script.js"></script> <!-- Verknüpfung zur JavaScript-Datei -->
 </body>
 </html>
