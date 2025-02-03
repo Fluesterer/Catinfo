@@ -116,12 +116,14 @@ button:focus {
 
 .video-container {
   position: relative;
-  padding-bottom: 177.78%; /* 9:16 aspect ratio */
+  /* Das Video ist kleiner, aber bleibt im vertikalen Format (9:16) */
+  width: 60%; /* Neue Breite für kleinere Darstellung */
+  padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
   height: 0;
   overflow: hidden;
-  max-width: 100%;
   background: #000;
   border-radius: 10px;
+  margin: 0 auto; /* Zentriert das Video */
 }
 
 .video-container iframe {
