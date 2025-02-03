@@ -3,39 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katzen Galerie</title>
+    <title>Mein Katzen Vlog</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="gallery">
-        <div class="item">
-            <img src="katze1.jpg" alt="Katze 1">
-            <div class="info-button">Info</div>
-            <div class="info">
-                <h2>Katze 1</h2>
-                <p>Dies ist ein Bild von meiner Katze, die in der Sonne schläft.</p>
-            </div>
+    <header>
+        <div class="container">
+            <h1>Willkommen zu meinem Katzen Vlog!</h1>
+            <p>Hier teile ich die lustigsten und süßesten Momente mit meinen Katzen.</p>
         </div>
-        <div class="item">
-            <img src="katze2.jpg" alt="Katze 2">
-            <div class="info-button">Info</div>
-            <div class="info">
-                <h2>Katze 2</h2>
-                <p>Hier ist meine Katze beim Spielen mit einem Ball.</p>
-            </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="vlog-entry">
+                <h2>Mein erster Katzen Vlog</h2>
+                <p>Ich habe endlich ein Video meiner Katze beim Spielen aufgenommen! Es ist einfach zu süß.</p>
+                <video controls>
+                    <source src="katzenvideo1.mp4" type="video/mp4">
+                    Dein Browser unterstützt keine Video-Wiedergabe.
+                </video>
+                <button class="info-button">Mehr Infos</button>
+                <div class="info">
+                    <h3>Mehr über dieses Video</h3>
+                    <p>In diesem Video siehst du meine Katze, wie sie mit einem Spielzeug jagt. Es war so ein Spaß, sie dabei zu beobachten!</p>
+                </div>
+            </section>
+
+            <section class="vlog-entry">
+                <h2>Katze in der Sonne</h2>
+                <p>Ich habe ein schönes Bild meiner Katze im Garten gemacht, wie sie in der Sonne schläft.</p>
+                <img src="katze1.jpg" alt="Katze in der Sonne">
+                <button class="info-button">Mehr Infos</button>
+                <div class="info">
+                    <h3>Mehr über dieses Bild</h3>
+                    <p>Meine Katze liebt es, sich in der Sonne zu entspannen. Dieses Bild ist einer meiner Favoriten!</p>
+                </div>
+            </section>
+
+            <!-- Weitere Vlog-Einträge hier hinzufügen -->
         </div>
-        <div class="item">
-            <video controls>
-                <source src="katzenvideo.mp4" type="video/mp4">
-                Dein Browser unterstützt keine Video-Wiedergabe.
-            </video>
-            <div class="info-button">Info</div>
-            <div class="info">
-                <h2>Katzen Video</h2>
-                <p>In diesem Video kannst du meine Katze sehen, wie sie mit einem Spielzeug jagt.</p>
-            </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mein Katzen Vlog. Alle Rechte vorbehalten.</p>
         </div>
-    </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
