@@ -195,6 +195,13 @@ button:focus {
 /* Mobile Styles */
 @media (max-width: 768px) {
   .photo {
-    width: 48%;
+    width: 48%; /* Zwei Bilder pro Reihe */
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .photo {
+    width: 30%; /* Auf größeren Bildschirmen (PC) kleinere Bilder */
   }
 }
