@@ -72,11 +72,11 @@ button:focus {
   margin-bottom: 40px;
 }
 
-/* Flexbox für die Bilder nebeneinander */
 .photo-row {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: space-between;
 }
 
 .photo {
@@ -85,7 +85,7 @@ button:focus {
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  width: 48%; /* Reduziert die Breite für beide Bilder, um nebeneinander zu passen */
+  width: 48%; /* Zwei Bilder pro Reihe */
 }
 
 .photo:hover {
@@ -95,6 +95,7 @@ button:focus {
 
 .photo img {
   width: 100%;
+  height: auto; /* Bildgröße beibehalten */
   display: block;
 }
 
@@ -121,12 +122,12 @@ button:focus {
 
 .video-container {
   position: relative;
-  width: 398px;  /* Feste Breite des Videos */
-  height: 707px; /* Feste Höhe des Videos */
+  width: 398px;
+  height: 707px;
   overflow: hidden;
   background: #000;
   border-radius: 10px;
-  margin: 0 auto; /* Zentriert das Video */
+  margin: 0 auto;
 }
 
 .video-container iframe {
@@ -146,47 +147,40 @@ button:focus {
   margin: 0;
 }
 
-/* Dunkelmodus Styles */
-.dark-theme {
-  background-color: #121212;
-  color: #f5f5f5;
-}
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .photo {
+    width: 48%; /* Zwei Bilder nebeneinander */
+  }
 
-.dark-theme header h1 {
-  color: #ff6f61;
-}
+  /* Vergrößerte Bilder auf mobilen Geräten */
+  .photo img {
+    width: 100%;
+    height: auto;
+  }
 
-.dark-theme button {
-  background-color: #fff;
-  color: #121212;
-}
+  .photo-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-.dark-theme .about {
-  background-color: #333;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
 
-.dark-theme .about h2 {
-  color: #ff6f61;
-}
+  h1 {
+    font-size: 2rem;
+  }
 
-.dark-theme .about p {
-  color: #ccc;
-}
+  .about h2 {
+    font-size: 1.5rem;
+  }
 
-.dark-theme .photo {
-  background-color: #444;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.dark-theme .photo p {
-  background-color: #555;
-  color: #fff;
-}
-
-.dark-theme .video {
-  background-color: #444;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  .about p {
+    font-size: 1rem;
+  }
 }
 
 .dark-theme .video p {
